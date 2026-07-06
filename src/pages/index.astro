@@ -1,0 +1,375 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'Publicidad & Promociones',
+    desc: 'Disponibles para campañas publicitarias de marcas nacionales e internacionales — ropa casual, formal, deportiva, trajes de baño y calzado.',
+    icon: '✦',
+  },
+  {
+    title: 'Fotografía & Maquillaje',
+    desc: 'Sesiones fotográficas profesionales con maquillaje incluido para lookbooks, catálogos, e-commerce y editoriales de moda.',
+    icon: '✦',
+  },
+  {
+    title: 'Contenido para Redes Sociales',
+    desc: 'Creación de contenido visual para Instagram, TikTok y plataformas digitales — reels, fotos de producto y campañas de influencer marketing.',
+    icon: '✦',
+  },
+  {
+    title: 'Eventos & Pasarelas',
+    desc: 'Presencia en eventos, lanzamientos de marca, desfiles de moda, inauguraciones y activaciones comerciales.',
+    icon: '✦',
+  },
+];
+
+const portfolio = [
+  { src: '/gemelas_vidal3.jpeg',  alt: 'Gemelas Vidal', label: 'Editorial' },
+  { src: '/gemelas_vidal5.jpeg',  alt: 'Gemelas Vidal', label: 'Campaña' },
+  { src: '/gemelas_vidal6.jpeg',  alt: 'Gemelas Vidal', label: 'Fashion' },
+  { src: '/gemelas_vidal7.jpeg',  alt: 'Gemelas Vidal', label: 'Lifestyle' },
+  { src: '/gemelas_vidal10.jpeg', alt: 'Gemelas Vidal', label: 'Editorial' },
+  { src: '/gemelas_vidal12.jpeg', alt: 'Gemelas Vidal', label: 'Campaña' },
+  { src: '/gemelas_vidal15.jpeg', alt: 'Gemelas Vidal', label: 'Fashion' },
+  { src: '/gemelas_vidal16.jpeg', alt: 'Gemelas Vidal', label: 'Campaña' },
+  { src: '/gemelas_vidal17.jpeg', alt: 'Gemelas Vidal', label: 'Editorial' },
+];
+---
+
+<Layout>
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 w-full z-50" style="mix-blend-mode: difference;">
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="#hero" class="font-display text-3xl font-light tracking-[0.2em] text-white">
+        GEMELAS VIDAL
+      </a>
+      <ul class="hidden md:flex gap-10 text-sm font-light tracking-[0.2em] uppercase text-white">
+        <li><a href="#portfolio" class="hover:opacity-70 transition-opacity">Portafolio</a></li>
+        <li><a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a></li>
+        <li><a href="#contacto" class="hover:opacity-70 transition-opacity">Contacto</a></li>
+      </ul>
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden flex flex-col gap-1.5" aria-label="Menú">
+        <span class="w-6 h-px bg-white block"></span>
+        <span class="w-6 h-px bg-white block"></span>
+      </button>
+    </nav>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#faf8f4] border-t border-[#e8e2d9]" style="mix-blend-mode: normal;">
+      <ul class="flex flex-col py-6 px-6 gap-6 text-xs tracking-[0.2em] uppercase text-[#6b6560]">
+        <li><a href="#portfolio" class="hover:text-[#1c1a18] transition-colors">Portafolio</a></li>
+        <li><a href="#servicios" class="hover:text-[#1c1a18] transition-colors">Servicios</a></li>
+        <li><a href="#contacto" class="hover:text-[#1c1a18] transition-colors">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="min-h-screen bg-[#faf8f4] flex flex-col">
+    <!-- Split image grid -->
+    <div class="flex-1 grid grid-cols-2 min-h-screen">
+      <!-- Left image -->
+      <div class="relative overflow-hidden">
+        <img
+          src="/gemelas_vidal1.jpeg"
+          alt="Gemelas Vidal"
+          class="absolute inset-0 w-full h-full object-cover object-top"
+        />
+        <div class="absolute inset-0 bg-[#faf8f4]/10"></div>
+      </div>
+      <!-- Right image -->
+      <div class="relative overflow-hidden">
+        <img
+          src="/gemelas_vidal2.jpeg"
+          alt="Gemelas Vidal"
+          class="absolute inset-0 w-full h-full object-cover object-top"
+        />
+        <div class="absolute inset-0 bg-[#faf8f4]/10"></div>
+      </div>
+    </div>
+
+    <!-- Hero text overlay -->
+    <div class="absolute inset-0 flex flex-col items-center justify-end pb-16 pointer-events-none" style="mix-blend-mode: difference;">
+      <p class="text-white tracking-[0.5em] text-xs uppercase mb-3 font-light">Tumaco · Nariño</p>
+      <h1 class="font-display text-[clamp(3.5rem,10vw,9rem)] leading-none text-white text-center tracking-widest font-light">
+        GEMELAS<br/>VIDAL
+      </h1>
+      <p class="text-white tracking-[0.4em] text-xs uppercase mt-4 font-light">Modelaje comercial · Contenido para marcas</p>
+      <div class="mt-8 flex gap-6 pointer-events-auto" style="mix-blend-mode: normal;">
+        <a href="#portfolio"
+          class="px-8 py-3 border border-[#1c1a18] text-[#1c1a18] bg-[#faf8f4]/80 text-xs tracking-[0.2em] uppercase hover:bg-[#1c1a18] hover:text-[#faf8f4] transition-all font-light">
+          Ver Portafolio
+        </a>
+        <a href="#contacto"
+          class="px-8 py-3 border border-[#faf8f4]/80 text-[#faf8f4] bg-[#1c1a18]/30 text-xs tracking-[0.2em] uppercase hover:bg-[#faf8f4] hover:text-[#1c1a18] transition-all font-light">
+          Contactar
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-4 h-4 text-[#b5a898]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="bg-[#1c1a18] py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="font-display text-3xl md:text-5xl text-[#faf8f4] font-light italic leading-relaxed">
+        "Dos voces, una presencia. Listas para darle vida a tu marca."
+      </p>
+      <div class="mt-6 w-12 h-px bg-[#b5a898] mx-auto"></div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="py-24 px-6 bg-[#faf8f4]">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-[#b5a898] tracking-[0.5em] text-xs uppercase mb-2">Trabajos</p>
+        <h2 class="font-display text-6xl md:text-8xl text-[#1c1a18] font-light">Portafolio</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
+        {portfolio.map((item, i) => (
+          <div class={`relative overflow-hidden group cursor-pointer ${i === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
+            <img
+              src={item.src}
+              alt={item.alt}
+              class={`w-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ${i === 0 ? 'h-full min-h-[400px] md:min-h-[600px]' : 'aspect-[3/4]'}`}
+            />
+            <div class="absolute inset-0 bg-[#1c1a18]/0 group-hover:bg-[#1c1a18]/30 transition-colors duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+              <span class="text-[#faf8f4] text-xs tracking-[0.3em] uppercase font-light">{item.label}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center flex flex-wrap justify-center gap-6">
+        <a
+          href="https://www.instagram.com/gemelas_vidal/"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-3 text-xs tracking-[0.3em] uppercase text-[#6b6560] hover:text-[#1c1a18] transition-colors border-b border-[#e8e2d9] hover:border-[#1c1a18] pb-1"
+        >
+          Ver más en Instagram
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a
+          href="https://www.tiktok.com/@gemelas_vidal"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-3 text-xs tracking-[0.3em] uppercase text-[#6b6560] hover:text-[#1c1a18] transition-colors border-b border-[#e8e2d9] hover:border-[#1c1a18] pb-1"
+        >
+          Ver más en TikTok
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER — full bleed editorial -->
+  <section class="relative h-[60vh] overflow-hidden">
+    <img
+      src="/gemelas_vidal9.jpeg"
+      alt="Gemelas Vidal"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style="object-position: center 30%;"
+    />
+    <div class="absolute inset-0 bg-[#1c1a18]/50"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+      <p class="text-[#b5a898] tracking-[0.6em] text-xs uppercase mb-4 font-light">Gemelas Vidal</p>
+      <h2 class="font-display text-[clamp(2.5rem,7vw,7rem)] leading-none text-[#faf8f4] font-light tracking-widest">
+        LA DUPLICIDAD QUE<br/>TU MARCA NECESITA
+      </h2>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="servicios" class="py-24 px-6 bg-[#f5f2ec]">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-14">
+        <p class="text-[#b5a898] tracking-[0.5em] text-xs uppercase mb-2">Qué ofrecemos</p>
+        <h2 class="font-display text-6xl md:text-8xl text-[#1c1a18] font-light">Servicios</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#e8e2d9]">
+        {services.map((s) => (
+          <div class="bg-[#f5f2ec] p-10 hover:bg-[#faf8f4] transition-colors group">
+            <span class="text-[#b5a898] text-lg mb-5 block">{s.icon}</span>
+            <h3 class="font-display text-2xl text-[#1c1a18] font-light mb-3 group-hover:italic transition-all">{s.title}</h3>
+            <p class="text-[#6b6560] text-sm leading-relaxed font-light">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contacto" class="py-24 px-6 bg-[#1c1a18]">
+    <div class="max-w-2xl mx-auto">
+      <div class="mb-14 text-center">
+        <p class="text-[#b5a898] tracking-[0.5em] text-xs uppercase mb-2">Hablemos</p>
+        <h2 class="font-display text-6xl md:text-8xl text-[#faf8f4] font-light">Contacto</h2>
+        <p class="text-[#6b6560] text-sm mt-4 font-light leading-relaxed">
+          ¿Tienes un proyecto en mente? Escríbenos y exploramos cómo trabajar juntos.
+        </p>
+      </div>
+
+      <!-- WhatsApp CTA -->
+      <a
+        href="https://wa.me/573128258009?text=Hola%20Gemelas%20Vidal%2C%20me%20interesa%20trabajar%20con%20ustedes%20en%20un%20proyecto."
+        target="_blank"
+        rel="noopener"
+        class="flex items-center justify-center gap-3 w-full py-4 bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] text-xs font-light tracking-[0.3em] uppercase hover:bg-[#25D366]/20 transition-all mb-6"
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Contactar por WhatsApp
+      </a>
+
+      <div class="flex items-center gap-4 mb-6">
+        <div class="flex-1 h-px bg-[#3a3835]"></div>
+        <span class="text-[#4a4845] text-xs tracking-[0.2em] uppercase">o envíanos un mensaje</span>
+        <div class="flex-1 h-px bg-[#3a3835]"></div>
+      </div>
+
+      <form
+        action="https://formspree.io/f/twomagicprincess@gmail.com"
+        method="POST"
+        id="contact-form"
+        class="flex flex-col gap-4"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Tu nombre"
+            required
+            class="bg-transparent border border-[#3a3835] px-5 py-4 text-[#faf8f4] placeholder-[#4a4845] text-sm tracking-wide focus:outline-none focus:border-[#b5a898] transition-colors font-light"
+          />
+          <input
+            type="text"
+            name="brand"
+            placeholder="Marca / Empresa"
+            class="bg-transparent border border-[#3a3835] px-5 py-4 text-[#faf8f4] placeholder-[#4a4845] text-sm tracking-wide focus:outline-none focus:border-[#b5a898] transition-colors font-light"
+          />
+        </div>
+        <input
+          type="email"
+          name="email"
+          placeholder="Correo electrónico"
+          required
+          class="bg-transparent border border-[#3a3835] px-5 py-4 text-[#faf8f4] placeholder-[#4a4845] text-sm tracking-wide focus:outline-none focus:border-[#b5a898] transition-colors font-light"
+        />
+        <textarea
+          name="message"
+          placeholder="Cuéntanos sobre tu proyecto..."
+          rows="4"
+          required
+          class="bg-transparent border border-[#3a3835] px-5 py-4 text-[#faf8f4] placeholder-[#4a4845] text-sm tracking-wide focus:outline-none focus:border-[#b5a898] transition-colors resize-none font-light"
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full py-4 border border-[#b5a898] text-[#b5a898] text-xs font-light tracking-[0.3em] uppercase hover:bg-[#b5a898] hover:text-[#1c1a18] transition-all mt-2"
+        >
+          Enviar Mensaje
+        </button>
+        <p id="contact-msg" class="text-sm text-[#b5a898] text-center hidden font-light tracking-wide">
+          ✓ ¡Mensaje enviado! Te contactamos pronto.
+        </p>
+        <p id="contact-err" class="text-sm text-red-400 text-center hidden font-light tracking-wide">
+          Hubo un error. Intenta de nuevo o escríbenos por WhatsApp.
+        </p>
+      </form>
+
+      <!-- Social links -->
+      <div class="mt-16 pt-10 border-t border-[#3a3835] flex justify-center gap-8">
+        <a href="https://www.tiktok.com/@gemelas_vidal" target="_blank" rel="noopener"
+          class="flex items-center gap-2 text-[#4a4845] hover:text-[#b5a898] transition-colors text-xs tracking-[0.2em] uppercase">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/>
+          </svg>
+          TikTok
+        </a>
+        <a href="https://www.instagram.com/gemelas_vidal/" target="_blank" rel="noopener"
+          class="flex items-center gap-2 text-[#4a4845] hover:text-[#b5a898] transition-colors text-xs tracking-[0.2em] uppercase">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="https://wa.me/573128258009" target="_blank" rel="noopener"
+          class="flex items-center gap-2 text-[#4a4845] hover:text-[#b5a898] transition-colors text-xs tracking-[0.2em] uppercase">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 border-t border-[#e8e2d9] text-center bg-[#faf8f4]">
+    <p class="text-[#b5a898] text-xs tracking-[0.3em] uppercase font-light">
+      © {new Date().getFullYear()} Gemelas Vidal · Todos los derechos reservados
+    </p>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+    menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+
+    // Contact form — Formspree
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const msg = document.getElementById('contact-msg');
+    const err = document.getElementById('contact-err');
+    const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (submitBtn) {
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
+      }
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) {
+          form.reset();
+          msg?.classList.remove('hidden');
+          err?.classList.add('hidden');
+          if (submitBtn) submitBtn.textContent = '✓ Enviado';
+        } else {
+          throw new Error('error');
+        }
+      } catch {
+        err?.classList.remove('hidden');
+        msg?.classList.add('hidden');
+        if (submitBtn) {
+          submitBtn.textContent = 'Enviar Mensaje';
+          submitBtn.disabled = false;
+        }
+      }
+    });
+  </script>
+
+</Layout>
