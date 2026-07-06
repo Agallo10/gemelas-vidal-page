@@ -90,23 +90,25 @@ const portfolio = [
       </div>
     </div>
 
-    <!-- Hero text overlay -->
-    <div class="absolute inset-0 flex flex-col items-center justify-end pb-16 pointer-events-none" style="mix-blend-mode: difference;">
+    <!-- Hero text overlay — blend mode solo en texto -->
+    <div class="absolute inset-0 flex flex-col items-center justify-end pb-32 pointer-events-none" style="mix-blend-mode: difference;">
       <p class="text-white tracking-[0.5em] text-xs uppercase mb-3 font-light">Tumaco · Nariño</p>
       <h1 class="font-display text-[clamp(3.5rem,10vw,9rem)] leading-none text-white text-center tracking-widest font-light">
         GEMELAS<br/>VIDAL
       </h1>
       <p class="text-white tracking-[0.4em] text-xs uppercase mt-4 font-light">Modelaje comercial · Contenido para marcas</p>
-      <div class="mt-8 flex gap-6 pointer-events-auto" style="mix-blend-mode: normal;">
-        <a href="#portfolio"
-          class="px-8 py-3 border border-[#1c1a18] text-[#1c1a18] bg-[#faf8f4]/80 text-xs tracking-[0.2em] uppercase hover:bg-[#1c1a18] hover:text-[#faf8f4] transition-all font-light">
-          Ver Portafolio
-        </a>
-        <a href="#contacto"
-          class="px-8 py-3 border border-[#faf8f4]/80 text-[#faf8f4] bg-[#1c1a18]/30 text-xs tracking-[0.2em] uppercase hover:bg-[#faf8f4] hover:text-[#1c1a18] transition-all font-light">
-          Contactar
-        </a>
-      </div>
+    </div>
+
+    <!-- Botones separados fuera del blend mode -->
+    <div class="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-6 z-20">
+      <a href="#portfolio"
+        class="px-8 py-3 border border-white/80 text-white backdrop-blur-sm bg-black/20 text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-[#1c1a18] transition-all font-light whitespace-nowrap">
+        Ver Portafolio
+      </a>
+      <a href="#contacto"
+        class="px-8 py-3 border border-white/40 text-white backdrop-blur-sm bg-white/10 text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-[#1c1a18] transition-all font-light whitespace-nowrap">
+        Contactar
+      </a>
     </div>
 
     <!-- Scroll indicator -->
